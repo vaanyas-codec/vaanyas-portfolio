@@ -34,20 +34,20 @@ const About = () => {
 
   // Flat list of all scrapbook photos
   const allPhotos = [
-    { src: profile1,  caption: "MET & RIDE panel" },
-    { src: profile2,  caption: "During AI Conclave" },
-    { src: profile3,  caption: "Talking to guest panelist at RIDE" },
-    { src: photo4,    caption: "Talking to guest panelist at RIDE" },
-    { src: photo5,    caption: "Synapse AI Club group photo" },
-    { src: photo6,    caption: "E-Cell group photo" },
-    { src: photo9,    caption: "Awarded for helping university set the World Record" },
-    { src: photo8,    caption: "At the Wadhwani Cohort with venture teams" },
-    { src: photo7,    caption: "At the Wadhwani Cohort" },
-    { src: photo10,   caption: "Synapse workshop session" },
-    { src: photo11,   caption: "Synapse workshop session" },
-    { src: photo12,   caption: "Winning a hackathon" },
-    { src: photo13,   caption: "Speaker session, E-Cell" },
-    { src: photo14,   caption: "MahaSummit" },
+    { src: profile1, caption: "MET & RIDE panel" },
+    { src: profile2, caption: "During AI Conclave" },
+    { src: profile3, caption: "Talking to guest panelist at RIDE" },
+    { src: photo4, caption: "Talking to guest panelist at RIDE" },
+    { src: photo5, caption: "Synapse AI Club group photo" },
+    { src: photo6, caption: "E-Cell group photo" },
+    { src: photo9, caption: "Awarded for helping university set the World Record" },
+    { src: photo8, caption: "At the Wadhwani Cohort with venture teams" },
+    { src: photo7, caption: "At the Wadhwani Cohort" },
+    { src: photo10, caption: "Synapse workshop session" },
+    { src: photo11, caption: "Synapse workshop session" },
+    { src: photo12, caption: "Winning a hackathon" },
+    { src: photo13, caption: "Speaker session, E-Cell" },
+    { src: photo14, caption: "MahaSummit" },
   ];
 
   // Single-page flip: track index of the LEFT photo
@@ -432,9 +432,8 @@ const About = () => {
                     key={index}
                     src={image.src}
                     alt={`Profile photo ${index + 1}`}
-                    className={`absolute w-full h-full object-contain transition-opacity duration-500 ${
-                      index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className={`absolute w-full h-full object-contain transition-opacity duration-500 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                      }`}
                     loading="eager"
                     onError={(e) => {
                       console.error('Image failed to load:', image.src);
@@ -518,7 +517,7 @@ const About = () => {
             {/* Close Button */}
             <button
               className="absolute top-4 right-4 text-white rounded-full w-11 h-11 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-90"
-              style={{ 
+              style={{
                 backgroundColor: themeColors.colors.pink[500],
                 transition: 'all 0.3s'
               }}
