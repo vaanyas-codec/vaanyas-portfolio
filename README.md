@@ -1,225 +1,98 @@
-# Portfolio Template
+# Vaanya Kshatriya — Portfolio
 
-A customizable personal portfolio website built with React, TypeScript, and Tailwind CSS. Features interactive elements, smooth animations, dark/light mode, and a clean design.
+Personal portfolio built on top of [cupidbity/portfolio-template](https://github.com/cupidbity/portfolio-template), customised with my projects, photos, and a scrapbook section I'm unreasonably fond of.
 
-## Getting Started
+Built with React, TypeScript, Vite, and Tailwind CSS.
 
-### Prerequisites
+---
 
-- Node.js (v16 or higher)
-- npm or yarn
+## What's in here
 
-### Installation
+**About** — roles typewriter, scrapbook photo journal with 14 photos and page-flip navigation, contact chips, live GitHub contribution graph
 
-1. Clone the repository
+**Projects** — Credit Card Fraud Detection, Skin Lesion Classifier, Real-Time ASL Detection. Each has a detail page with overview, tech stack, and highlights.
+
+**Experience** — Accodyn Technologies internship (Feb 2025 to June 2025)
+
+**Skills** — 3D dome gallery with all 17 icons from my actual stack, auto-spin, hover to pause, tooltip on each icon
+
+**Leadership** — Synapse AI Club (VP), E-Cell MIT-WPU (Thrive Head), IIC (Secretary), with a timeline layout
+
+---
+
+## Stack
+
+React 19, TypeScript, Vite, Tailwind CSS, Radix UI, Lucide Icons, GSAP, React Spring, React Router DOM
+
+---
+
+## Running locally
+
 ```bash
-git clone https://github.com/cupidbity/portfolio-template.git
-cd portfolio-template
-```
-
-2. Install dependencies
-```bash
+git clone https://github.com/vaanyas-codec/vaanyas-portfolio.git
+cd vaanyas-portfolio
 npm install
-```
-
-3. Set up environment variables
-```bash
 cp .env.example .env
-```
-
-4. Start the development server
-```bash
 npm run dev
 ```
 
-5. Build for production
+Open `http://localhost:5173`.
+
+## Environment variables
+
+Add these to your `.env` before running:
+
+```
+VITE_GITHUB_URL=https://github.com/vaanyas-codec
+VITE_LINKEDIN_URL=https://www.linkedin.com/in/vaanya-kshatriya-/
+VITE_EMAIL=vaanya.kshatriya@gmail.com
+
+VITE_GITHUB_PROJECT1_URL=https://github.com/vaanyas-codec/credit-card-fraud-detection
+VITE_GITHUB_PROJECT2_URL=https://github.com/vaanyas-codec/skin-lesion-classifier
+VITE_GITHUB_PROJECT3_URL=https://github.com/vaanyas-codec/realtime-sign-language-recognition
+```
+
+## Build
+
 ```bash
 npm run build
 ```
 
-## Customization Guide
+Output goes to `dist/`. Deploy anywhere that serves static files. I use Vercel, connected to this repo, auto-deploys on every push to main.
 
-### 1. Personal Information
+---
 
-**Name & Title** — Update your name in these files:
-
-| File | What to change |
-|------|---------------|
-| `index.html` | Page `<title>` |
-| `src/components/section/Navigation.tsx` | Nav bar name and aria-label |
-| `src/components/section/About.tsx` | Hero greeting text (`AsciiMorphText`) |
-| `src/components/Footer.tsx` | Copyright name |
-
-**Roles** — Edit the typewriter carousel roles in `src/components/section/About.tsx`:
-```tsx
-const roles = [
-  'Software Engineer',
-  'Full-Stack Developer',
-  // Add your own roles
-];
-```
-
-### 2. Profile Images
-
-Add your profile images to `src/assets/`:
-- `profile1.jpg`
-- `profile2.jpg`
-- `profile3.jpg`
-
-Then uncomment the imports in `src/assets/index.ts`:
-```ts
-import profile1 from './profile1.jpg';
-import profile2 from './profile2.jpg';
-import profile3 from './profile3.jpg';
-```
-
-Update the captions in `src/components/section/About.tsx`:
-```tsx
-const profileImages = [
-  { src: profile1, caption: "your caption" },
-  { src: profile2, caption: "your caption" },
-  { src: profile3, caption: "your caption" }
-];
-```
-
-### 3. Journal Image
-
-Replace `src/assets/journal.PNG` with your own journal-style background image for the About section.
-
-### 4. Resume
-
-Place your resume PDF at `public/resume.pdf` — the Resume button in the About section and Footer link to this path.
-
-### 5. Social Links & Environment Variables
-
-Edit your `.env` file with your actual URLs:
-```env
-VITE_GITHUB_URL=https://github.com/yourusername
-VITE_LINKEDIN_URL=https://linkedin.com/in/yourusername
-VITE_EMAIL=your.email@example.com
-
-VITE_GITHUB_PROJECT1_URL=https://github.com/yourusername/project-one
-VITE_GITHUB_PROJECT2_URL=https://github.com/yourusername/project-two
-VITE_GITHUB_PROJECT3_URL=https://github.com/yourusername/project-three
-VITE_GITHUB_PROJECT4_URL=https://github.com/yourusername/project-four
-```
-
-These are consumed in `src/config/socialLinks.ts` — add more repository entries there as needed.
-
-### 6. Projects
-
-**Gallery cards** — Edit the projects array in `src/components/section/Projects.tsx`:
-```tsx
-{
-  title: "Your Project",
-  description: "A brief description of your project.",
-  technologies: ["React", "TypeScript", "Node.js"],
-  icon: YourProjectIcon,        // or use comingSoon as placeholder
-  detailsUrl: "/projects/your-project",
-  githubUrl: socialLinks.repositories.yourProject
-}
-```
-
-**Project icons** — Add icon images to `src/assets/project_icons/` and register them in `src/assets/project_icons/index.ts`:
-```ts
-import YourProjectIcon from './YourProjectIcon.webp';
-export { YourProjectIcon };
-```
-
-**Project detail pages** — Create a detail page for each project at `src/pages/projects/YourProject.tsx`. Use the available components:
-- `ProjectLayout` — Page wrapper with dark mode theming
-- `ProjectHeader` — Icon, title, subtitle, GitHub link, feature grid
-- `ImageCarousel` — Screenshot carousel with navigation
-- `ProjectOverview` — Multi-paragraph description
-- `TechStack` — Technology badges
-- `TechnicalHighlights` — Bulleted achievements list
-
-**Project snapshots** — Add screenshot images to `src/assets/project_snapshots/your-project/` and import them in `src/assets/index.ts`.
-
-**Routing** — Register your project pages in `src/App.tsx`:
-```tsx
-const YourProject = lazy(() => import('./pages/projects/YourProject'))
-// ...
-<Route path="/projects/your-project" element={<YourProject />} />
-```
-
-### 7. Experience
-
-Edit `src/components/section/Experience.tsx` with your work history:
-```tsx
-{
-  title: "Your Job Title",
-  company: "Company Name",
-  location: "City, State",
-  period: "Month Year - Month Year",
-  description: [
-    "Your accomplishment or responsibility",
-  ]
-}
-```
-
-### 8. Certifications
-
-Edit `src/components/section/Certifications.tsx` with your credentials. The section supports two types:
-- **Badges** (e.g., AWS) — with image, title, subtitle, and Credly URL
-- **Credentials** (e.g., CITI) — with image, title, issuer, dates, and credential ID/URL
-
-Replace badge images in `src/assets/badges/` with your own.
-
-### 9. Skills
-
-Update your technical skills in `src/components/section/Skills.tsx`. Skill icons are in `src/assets/techstack/`.
-
-## Project Structure
+## Project structure
 
 ```
-portfolio-template/
-├── src/
-│   ├── assets/
-│   │   ├── project_icons/       # Project icon images
-│   │   ├── project_snapshots/   # Project screenshot folders
-│   │   ├── badges/              # Certification badge images
-│   │   ├── stars/               # Decorative star images
-│   │   ├── stickers/            # Sticker images
-│   │   └── techstack/           # Skill/technology icons
-│   ├── components/
-│   │   ├── section/             # Main page sections
-│   │   ├── project/             # Project detail page components
-│   │   └── ui/                  # Reusable UI components
-│   ├── config/
-│   │   └── socialLinks.ts       # Social media & repo URLs
-│   ├── contexts/
-│   │   └── DarkModeContext.tsx   # Theme management
-│   ├── pages/
-│   │   ├── projects/            # Individual project detail pages
-│   │   └── Contact.tsx          # Contact page
-│   ├── styles/
-│   │   └── colors.ts            # Color palette
-│   └── App.tsx                  # Routes & layout
-├── public/
-│   └── resume.pdf               # Your resume (add this)
-├── .env                         # Your environment variables (create from .env.example)
-└── .env.example                 # Environment variable template
+src/
+  assets/              photos, icons, stickers, tech stack SVGs
+  components/
+    section/           About, Projects, Experience, Skills, Leadership, Navigation, Footer
+    project/           ProjectLayout, ProjectHeader, ProjectOverview, TechStack, TechnicalHighlights
+    ui/                dome gallery, image carousel, aurora, cards, badges
+  config/
+    socialLinks.ts     all URLs in one place, pulled from .env
+  contexts/
+    DarkModeContext    light/dark toggle with localStorage persistence
+  pages/
+    projects/          CreditCardFraudDetection, SkinLesionClassifier, RealtimeAslDetection
+    Contact.tsx
+  styles/
+    colors.ts          full colour palette consumed via useThemeColors hook
+  App.tsx              routes and layout
+public/
+  resume.pdf           my resume, linked from the About section
 ```
 
-## Features
+---
 
-- Dark/light mode with system preference detection
-- Interactive ASCII text with morphing effects
-- Draggable star decorations
-- Aurora gradient backgrounds
-- Animated stickers on scroll
-- Image carousel for project screenshots
-- Responsive design across all devices
-- Lazy-loaded routes and components
+## Things I changed from the base template
 
-## Technologies
+Replaced the placeholder content throughout. Added a Leadership/Extracurriculars section from scratch. Rebuilt the About photo section as a scrapbook with single-page flip animation. Added 17 skill icons covering my actual ML/data stack (PyTorch, XGBoost, FastAPI, scikit-learn, OpenCV, MediaPipe, Pandas, NumPy, and so on). Wired live GitHub repo stats to the project cards. Added auto-spin to the skills dome with hover-to-pause and per-icon tooltips.
 
-- React 19, TypeScript, Vite
-- Tailwind CSS, Radix UI, Lucide Icons
-- GSAP, React Spring, OGL (WebGL)
-- React Router DOM
+---
 
 ## License
 
-MIT
+MIT. Base template by [cupidbity](https://github.com/cupidbity/portfolio-template).
