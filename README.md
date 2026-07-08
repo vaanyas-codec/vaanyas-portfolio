@@ -3,7 +3,7 @@
 Personal portfolio built on top of [cupidbity/portfolio-template](https://github.com/cupidbity/portfolio-template), customised with my projects, photos, and a scrapbook section I'm unreasonably fond of.
 
 Built with React, TypeScript, Vite, and Tailwind CSS.
-
+Live at: [vaanyas-portfolio-meah.vercel.app](https://vaanyas-portfolio-meah.vercel.app)
 ---
 
 ## What's in here
@@ -88,6 +88,7 @@ public/
 ---
 
 ## Things I changed from the base template
+
 
 Replaced the placeholder content throughout. Added a Leadership/Extracurriculars section from scratch. Rebuilt the About photo section as a scrapbook with single-page flip animation. Added 17 skill icons covering my actual ML/data stack (PyTorch, XGBoost, FastAPI, scikit-learn, OpenCV, MediaPipe, Pandas, NumPy, and so on). Wired live GitHub repo stats to the project cards. Added auto-spin to the skills dome with hover-to-pause and per-icon tooltips.
 
