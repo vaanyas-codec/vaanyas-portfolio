@@ -3,6 +3,8 @@
 Personal portfolio built on top of [cupidbity/portfolio-template](https://github.com/cupidbity/portfolio-template), customised with my projects, photos, and a scrapbook section I'm unreasonably fond of.
 
 Built with React, TypeScript, Vite, and Tailwind CSS.
+
+
 Live at: [vaanyas-portfolio-meah.vercel.app](https://vaanyas-portfolio-meah.vercel.app)
 ---
 
