@@ -4,11 +4,13 @@ import { useDarkMode } from '../../contexts/DarkModeContext';
 import { useThemeColors } from '../../hooks/useThemeColors';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import { Badge } from '../ui/badge';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
-import { ExternalLink, Code, Heart, ChevronLeft, ChevronRight, ShieldAlert, Microscope, ScanFace } from 'lucide-react';
+import { TooltipProvider } from '../ui/tooltip';
+import { ExternalLink, Code, ChevronLeft, ChevronRight, ShieldAlert, Microscope, ScanFace, Leaf, Network } from 'lucide-react';
 import { socialLinks } from '../../config/socialLinks';
 import { lightStars, darkStars, specialStars } from '../../assets/stars';
 import { comingSoon } from '../../assets';
+
+const projectIcons: Record<string, typeof ShieldAlert> = { ShieldAlert, Microscope, ScanFace, Leaf, Network };
 
 const Projects = () => {
   const { isDarkMode } = useDarkMode();
@@ -25,7 +27,7 @@ const Projects = () => {
   // carousel state
   const [currentPage, setCurrentPage] = useState(0);
   const [direction, setDirection] = useState<'left' | 'right'>('right');
-  const projectsPerPage = 4;
+  const projectsPerPage = 6;
 
   const containerRef = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef(false);
@@ -254,6 +256,24 @@ const Projects = () => {
       emoji: 'ScanFace',
       detailsUrl: "/projects/realtime-asl-detection",
       githubUrl: socialLinks.repositories.projectThree
+    },
+    {
+      title: "Trail Plant Guardian",
+      description: "Photo-to-advisory tool for Western Ghats trekkers. An EfficientNet-B0 classifier returns the top-3 plant species, a confidence gate decides how far to trust it, and a knowledge graph of host plants and butterflies grounds a short trailside advisory, written by a local LLM with a template fallback so it never invents facts.",
+      technologies: ["PyTorch", "EfficientNet-B0", "Knowledge Graph", "Ollama", "Streamlit"],
+      icon: '',
+      emoji: 'Leaf',
+      detailsUrl: "/projects/trail-plant-guardian",
+      githubUrl: socialLinks.repositories.projectFour
+    },
+    {
+      title: "DACS Ensemble",
+      description: "Research on ensemble classifier selection: a competitive accuracy margin plus diversity over a 13-model pool, with reliability-weighted belief revision. Found and fixed a test-label leak and a label-leaking dataset, then reported the corrected results honestly: 3 significant wins and 0 losses against soft voting on 12 UCI datasets.",
+      technologies: ["Python", "scikit-learn", "Flask", "pytest", "Statistical Testing"],
+      icon: '',
+      emoji: 'Network',
+      detailsUrl: "/projects/dacs-ensemble",
+      githubUrl: socialLinks.repositories.projectFive
     }
   ];
 
@@ -414,26 +434,6 @@ const Projects = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex items-center justify-center gap-1 mb-4">
             <h2 className="text-4xl font-bold" style={{ color: isDarkMode ? themeColors.colors.white : themeColors.colors.pink[500] }}>Projects</h2>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <button 
-                  className="inline-flex items-center justify-center bg-transparent border-none outline-none focus:outline-none" 
-                  style={{ minWidth: '44px', minHeight: '44px' }}
-                  aria-label="Information about project icons"
-                >
-                  <Heart
-                    className="h-5 w-5 cursor-pointer transition-colors"
-                    style={{ color: themeColors.primary }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = themeColors.secondary}
-                    onMouseLeave={(e) => e.currentTarget.style.color = themeColors.primary}
-                    fill="none"
-                  />
-                </button>
-              </TooltipTrigger>
-              <TooltipContent className="bg-white text-gray-800 border-pink-200">
-                <p>all favicons created by me!</p>
-              </TooltipContent>
-            </Tooltip>
           </div>
           <p className="text-center mb-12 text-lg text-gray-600 dark:text-gray-300">
             Here are some of the projects I've worked on recently
@@ -456,9 +456,7 @@ const Projects = () => {
                   <div className="flex items-start gap-3">
                     <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
                       style={{ background: themeColors.interactive.primary }}>
-                      {(project as typeof project & { emoji?: string }).emoji === 'ShieldAlert' && <ShieldAlert className="w-6 h-6" style={{ color: themeColors.text.accent }} />}
-                      {(project as typeof project & { emoji?: string }).emoji === 'Microscope' && <Microscope className="w-6 h-6" style={{ color: themeColors.text.accent }} />}
-                      {(project as typeof project & { emoji?: string }).emoji === 'ScanFace' && <ScanFace className="w-6 h-6" style={{ color: themeColors.text.accent }} />}
+                      {(() => { const Icon = projectIcons[project.emoji]; return Icon ? <Icon className="w-6 h-6" style={{ color: themeColors.text.accent }} /> : null; })()}
                     </div>
                     <div className="flex-1">
                       <CardTitle className="text-xl dark:text-gray-100 transition-colors group-hover:!text-pink-500 dark:group-hover:!text-pink-400">
@@ -553,6 +551,7 @@ const Projects = () => {
           </div>
 
           {/* Carousel navigation - subtle dots at bottom */}
+          {totalPages > 1 && (
           <div className="flex items-center justify-center gap-3 mt-4 relative z-10" style={{ minHeight: '32px' }}>
             <button
               onClick={handlePrevPage}
@@ -627,6 +626,7 @@ const Projects = () => {
               <ChevronRight className="h-5 w-5" />
             </button>
           </div>
+          )}
         </div>
       </TooltipProvider>
       

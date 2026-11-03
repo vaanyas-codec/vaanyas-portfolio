@@ -11,6 +11,7 @@ export const socialLinks = {
     projectTwo: import.meta.env.VITE_GITHUB_PROJECT2_URL,
     projectThree: import.meta.env.VITE_GITHUB_PROJECT3_URL,
     projectFour: import.meta.env.VITE_GITHUB_PROJECT4_URL,
+    projectFive: import.meta.env.VITE_GITHUB_PROJECT5_URL,
   },
   
   // Formatted display names (extracted from environment variables)

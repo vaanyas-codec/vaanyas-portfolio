@@ -9,6 +9,12 @@ import PyTorch from './PyTorch.svg';
 import ScikitLearn from './ScikitLearn.svg';
 import SQL from './SQL.svg';
 import XGBoost from './XGBoost.svg';
+import Flask from './Flask.svg';
+import Streamlit from './Streamlit.svg';
+import Pytest from './Pytest.svg';
+import Jupyter from './Jupyter.svg';
+import Ollama from './Ollama.svg';
+import Claude from './Claude.svg';
 import AWSLight from './AWS-Light.svg';
 import Bootstrap from './Bootstrap.svg';
 import C from './C.svg';
@@ -45,6 +51,12 @@ import VercelLight from './Vercel-Light.svg';
 import ViteLight from './Vite-Light.svg';
 
 export const techStackIcons = {
+  Flask,
+  Streamlit,
+  Pytest,
+  Jupyter,
+  Ollama,
+  Claude,
   AWSLight,
   Bootstrap,
   C,

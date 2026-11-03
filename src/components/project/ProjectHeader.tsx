@@ -3,7 +3,8 @@ import { Github, type LucideIcon } from 'lucide-react';
 import { useThemeColors } from '../../hooks/useThemeColors';
 
 interface ProjectHeaderProps {
-  icon: string;
+  icon?: string;
+  fallbackIcon?: LucideIcon;
   title: string;
   subtitle: string;
   githubUrl: string;
@@ -16,6 +17,7 @@ interface ProjectHeaderProps {
 
 const ProjectHeader: React.FC<ProjectHeaderProps> = ({ 
   icon, 
+  fallbackIcon: FallbackIcon,
   title, 
   subtitle, 
   githubUrl, 
@@ -26,7 +28,17 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
   return (
     <div className="rounded-lg shadow-lg p-8 mb-8" style={{ backgroundColor: themeColors.card.background }}>
       <div className="flex items-start gap-6 mb-6">
-        <img src={icon} alt={title} className="w-24 h-24 rounded-lg" loading="lazy" width="96" height="96" />
+        {icon ? (
+          <img src={icon} alt={title} className="w-24 h-24 rounded-lg" loading="lazy" width="96" height="96" />
+        ) : (
+          <div
+            className="w-24 h-24 rounded-lg flex items-center justify-center flex-shrink-0"
+            style={{ background: themeColors.interactive.primary }}
+            aria-hidden="true"
+          >
+            {FallbackIcon && <FallbackIcon className="w-12 h-12" style={{ color: themeColors.text.accent }} />}
+          </div>
+        )}
         <div className="flex-1">
           <h1 className="text-4xl font-bold mb-2" style={{ color: themeColors.text.primary }}>{title}</h1>
           <p className="text-lg" style={{ color: themeColors.text.secondary }}>{subtitle}</p>

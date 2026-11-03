@@ -1,18 +1,17 @@
-import { Layers, Activity, Image } from 'lucide-react';
+import { Layers, Activity, Image, Microscope } from 'lucide-react';
 import ProjectLayout from '../../components/project/ProjectLayout';
 import ProjectHeader from '../../components/project/ProjectHeader';
 import ProjectSection from '../../components/project/ProjectSection';
 import ProjectOverview from '../../components/project/ProjectOverview';
 import TechStack from '../../components/project/TechStack';
 import TechnicalHighlights from '../../components/project/TechnicalHighlights';
-import { skinLesionIcon } from '../../assets/project_icons';
 import { socialLinks } from '../../config/socialLinks';
 
 const SkinLesionClassifier = () => {
   return (
     <ProjectLayout>
       <ProjectHeader
-        icon={skinLesionIcon}
+        fallbackIcon={Microscope}
         title="Skin Lesion Classifier"
         subtitle="7-class skin lesion classification with a focus on melanoma recall"
         githubUrl={socialLinks.repositories.projectTwo}

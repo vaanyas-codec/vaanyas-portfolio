@@ -10,15 +10,15 @@ Live at: [vaanyas-portfolio-meah.vercel.app](https://vaanyas-portfolio-meah.verc
 
 ## What's in here
 
-**About** — roles typewriter, scrapbook photo journal with 14 photos and page-flip navigation, contact chips, live GitHub contribution graph
+**About** — roles typewriter, a portrait and an about-me section covering my roles and activities, contact chips, live GitHub contribution graph
 
-**Projects** — Credit Card Fraud Detection, Skin Lesion Classifier, Real-Time ASL Detection. Each has a detail page with overview, tech stack, and highlights.
+**Projects** — Credit Card Fraud Detection, Skin Lesion Classifier, Real-Time ASL Detection, Trail Plant Guardian, DACS Ensemble. Each has a detail page with overview, tech stack, and highlights.
 
 **Experience** — Accodyn Technologies internship (Feb 2025 to June 2025)
 
 **Skills** — 3D dome gallery with all 17 icons from my actual stack, auto-spin, hover to pause, tooltip on each icon
 
-**Leadership** — Synapse AI Club (VP), E-Cell MIT-WPU (Thrive Head), IIC (Secretary), with a timeline layout
+**Leadership** — Synapse AI Club (President), E-Cell MIT-WPU (Thrive Head), IIC (Secretary), with a timeline layout
 
 ---
 
@@ -52,6 +52,8 @@ VITE_EMAIL=vaanya.kshatriya@gmail.com
 VITE_GITHUB_PROJECT1_URL=https://github.com/vaanyas-codec/credit-card-fraud-detection
 VITE_GITHUB_PROJECT2_URL=https://github.com/vaanyas-codec/skin-lesion-classifier
 VITE_GITHUB_PROJECT3_URL=https://github.com/vaanyas-codec/realtime-sign-language-recognition
+VITE_GITHUB_PROJECT4_URL=https://github.com/vaanyas-codec/trail-plant-guardian
+VITE_GITHUB_PROJECT5_URL=https://github.com/vaanyas-codec/dacs-ensemble
 ```
 
 ## Build
@@ -78,7 +80,8 @@ src/
   contexts/
     DarkModeContext    light/dark toggle with localStorage persistence
   pages/
-    projects/          CreditCardFraudDetection, SkinLesionClassifier, RealtimeAslDetection
+    projects/          CreditCardFraudDetection, SkinLesionClassifier, RealtimeAslDetection,
+                       TrailPlantGuardian, DacsEnsemble
     Contact.tsx
   styles/
     colors.ts          full colour palette consumed via useThemeColors hook
@@ -92,7 +95,7 @@ public/
 ## Things I changed from the base template
 
 
-Replaced the placeholder content throughout. Added a Leadership/Extracurriculars section from scratch. Rebuilt the About photo section as a scrapbook with single-page flip animation. Added 17 skill icons covering my actual ML/data stack (PyTorch, XGBoost, FastAPI, scikit-learn, OpenCV, MediaPipe, Pandas, NumPy, and so on). Wired live GitHub repo stats to the project cards. Added auto-spin to the skills dome with hover-to-pause and per-icon tooltips.
+Replaced the placeholder content throughout. Added a Leadership/Extracurriculars section from scratch. Replaced the About photo section with one optimised portrait and an about-me section. Added 17 skill icons covering my actual ML/data stack (PyTorch, XGBoost, FastAPI, scikit-learn, OpenCV, MediaPipe, Pandas, NumPy, and so on). Wired live GitHub repo stats to the project cards. Added auto-spin to the skills dome with hover-to-pause and per-icon tooltips.
 
 ---
 

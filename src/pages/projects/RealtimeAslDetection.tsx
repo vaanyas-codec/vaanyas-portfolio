@@ -1,18 +1,17 @@
-import { Gauge, BookOpen, Video } from 'lucide-react';
+import { Gauge, BookOpen, Video, ScanFace } from 'lucide-react';
 import ProjectLayout from '../../components/project/ProjectLayout';
 import ProjectHeader from '../../components/project/ProjectHeader';
 import ProjectSection from '../../components/project/ProjectSection';
 import ProjectOverview from '../../components/project/ProjectOverview';
 import TechStack from '../../components/project/TechStack';
 import TechnicalHighlights from '../../components/project/TechnicalHighlights';
-import { aslDetectionIcon } from '../../assets/project_icons';
 import { socialLinks } from '../../config/socialLinks';
 
 const RealtimeAslDetection = () => {
   return (
     <ProjectLayout>
       <ProjectHeader
-        icon={aslDetectionIcon}
+        fallbackIcon={ScanFace}
         title="Real-Time ASL Detection"
         subtitle="A webcam-based American Sign Language recognizer"
         githubUrl={socialLinks.repositories.projectThree}

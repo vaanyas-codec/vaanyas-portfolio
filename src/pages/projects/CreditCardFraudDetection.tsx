@@ -1,18 +1,17 @@
-import { Target, TrendingUp, Percent } from 'lucide-react';
+import { Target, TrendingUp, Percent, ShieldAlert } from 'lucide-react';
 import ProjectLayout from '../../components/project/ProjectLayout';
 import ProjectHeader from '../../components/project/ProjectHeader';
 import ProjectSection from '../../components/project/ProjectSection';
 import ProjectOverview from '../../components/project/ProjectOverview';
 import TechStack from '../../components/project/TechStack';
 import TechnicalHighlights from '../../components/project/TechnicalHighlights';
-import { fraudDetectionIcon } from '../../assets/project_icons';
 import { socialLinks } from '../../config/socialLinks';
 
 const CreditCardFraudDetection = () => {
   return (
     <ProjectLayout>
       <ProjectHeader
-        icon={fraudDetectionIcon}
+        fallbackIcon={ShieldAlert}
         title="Credit Card Fraud Detection"
         subtitle="A leakage-free ML pipeline for detecting fraud in a severely imbalanced dataset"
         githubUrl={socialLinks.repositories.projectOne}

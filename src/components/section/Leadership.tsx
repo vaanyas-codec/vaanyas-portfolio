@@ -10,12 +10,12 @@ const Leadership = () => {
     {
       id: 'synapse-ai-club',
       icon: Users,
-      title: 'Vice President, Synapse AI Club',
+      title: 'President, Synapse AI Club',
       org: 'MIT-WPU',
       period: '2024 - Present',
-      progression: 'Tech Team Member (2024) → Treasurer (2025) → Vice President (2026 onwards)',
+      progression: 'Tech Team Member (2024) → Treasurer (2025) → President (2026 onwards)',
       description:
-        'Joined as a Technical Team Member in 2024, contributing to projects including DriveOpt. Became Treasurer in 2025, managing club finances across workshops, hackathons, and major events. Now serving as Vice President, leading club initiatives and technical sessions for a community of 500+ members.',
+        'Joined as a Technical Team Member in 2024, contributing to projects including DriveOpt. Became Treasurer in 2025, managing club finances across workshops, hackathons, and major events. Now serving as President, leading club initiatives and technical sessions for a community of 500+ members.',
     },
     {
       id: 'e-cell-thrive-head',

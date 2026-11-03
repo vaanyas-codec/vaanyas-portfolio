@@ -12,6 +12,8 @@ import './App.css'
 const CreditCardFraudDetection = lazy(() => import('./pages/projects/CreditCardFraudDetection'))
 const SkinLesionClassifier = lazy(() => import('./pages/projects/SkinLesionClassifier'))
 const RealtimeAslDetection = lazy(() => import('./pages/projects/RealtimeAslDetection'))
+const TrailPlantGuardian = lazy(() => import('./pages/projects/TrailPlantGuardian'))
+const DacsEnsemble = lazy(() => import('./pages/projects/DacsEnsemble'))
 const Contact = lazy(() => import('./pages/Contact'))
 
 // Lazy load below-the-fold components for better initial load
@@ -101,6 +103,8 @@ function AppContent() {
               <Route path="/projects/credit-card-fraud-detection" element={<CreditCardFraudDetection />} />
               <Route path="/projects/skin-lesion-classifier" element={<SkinLesionClassifier />} />
               <Route path="/projects/realtime-asl-detection" element={<RealtimeAslDetection />} />
+              <Route path="/projects/trail-plant-guardian" element={<TrailPlantGuardian />} />
+              <Route path="/projects/dacs-ensemble" element={<DacsEnsemble />} />
             </Routes>
           </Suspense>
         </main>
